@@ -39,7 +39,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
-        fonts: ['Cairo'],
+        fonts: ['Cairo', 'IBM Plex Serif'],
         display: 'swap',
       },
     },

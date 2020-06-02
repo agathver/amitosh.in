@@ -7,8 +7,6 @@ import SEO from '../components/seo'
 import styled from 'styled-components'
 
 import {
-  FaBriefcase,
-  FaMapMarker,
   FaEnvelope,
   FaTwitter,
   FaGithub,
@@ -24,11 +22,37 @@ const Portrait = styled.div`
   display: block;
   margin: 2rem auto;
   border-radius: 50%;
-  border: 1rem solid;
+  border: 0.5rem solid;
   overflow: hidden;
-  border-color: ${props => props.theme.black}
-    ${props => props.theme.primaryDark} ${props => props.theme.primaryDark}
-    ${props => props.theme.black};
+  border-color: #fefefe;
+  box-shadow: 0px 15.619px 31.2381px #00000026;
+`
+
+const Intro = styled.div`
+  color: ${props => props.theme.secondary};
+  text-align: center;
+  max-width: 40rem;
+`
+
+const Social = styled.nav``
+
+const SocialLink = styled.a`
+  cursor: pointer;
+  color: ${props => props.theme.secondary};
+  text-align: center;
+  border-radius: 50%;
+  text-decoration: none;
+
+  margin: 0.25rem 0.5rem;
+  font-size: 1.25rem;
+
+  &:hover {
+    color: ${props => props.theme.black};
+  }
+`
+
+const HeroHeading = styled.h1`
+  font-family: 'IBM Plex Serif', serif;
 `
 
 export default function IndexPage() {
@@ -48,7 +72,13 @@ export default function IndexPage() {
     }
   `)
 
-  const { email, twitter, github, linkedin, medium } = data.site.siteMetadata.contactInfo
+  const {
+    email,
+    twitter,
+    github,
+    linkedin,
+    medium,
+  } = data.site.siteMetadata.contactInfo
 
   return (
     <Layout>
@@ -58,72 +88,44 @@ export default function IndexPage() {
       </Portrait>
 
       <div class="about">
-        <h1 class="name">Amitosh Swain Mahapatra</h1>
-        <h2 class="pro-desc">Software Engineer / Computer Whisperer</h2>
-
-        <div class="info">
-          <span>
-            <FaBriefcase /> Product Engineer @ Gojek
-          </span>
-          <span>
-            <FaMapMarker /> Bangalore, IN
-          </span>
-        </div>
+        <HeroHeading>Amitosh Swain Mahapatra</HeroHeading>
       </div>
 
-      <div class="social">
-        <ul>
-          <li>
-            <a href={`mailto:${email}?Subject=Hello!`}>
-              <FaEnvelope />
-            </a>
-          </li>
-          <li>
-            <a href={`https://twitter.com/${twitter}`}>
-              <FaTwitter />
-            </a>
-          </li>
-          <li>
-            <a href={`https://github.com/${github}`}>
-              <FaGithub />
-            </a>
-          </li>
-          <li>
-            <a href={`https://www.linkedin.com/in/${linkedin}`}>
-              <FaLinkedin />
-            </a>
-          </li>
-          <li>
-            <a href={`https://medium.com/@${medium}`}>
-              <FaMedium />
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="intro">
+      <Intro>
         <p>
-          A software engineer, conference speaker, open-source contributor and
-          computer whisperer from Bangalore, India. Been conjuring code since
-          2010.
+          A software engineer, currently working at Gojek, conference speaker,
+          open-source contributor and computer whisperer from Bangalore, India.
+          Been conjuring code since 2010.
         </p>
         <p>
           Loves to revel in creativity &mdash; draws, sketches and cooks.
           Passionate gamer. Likes sci-fi movies, electronic, metal and rock
-          music.
+          music. Always looking for challenges, problems to solve and learning
+          great new skills, technologies and tools.
         </p>
-        <p>
-          Created, as well as contributed to a number of{' '}
-          <a href={`https://github.com/${github}`}>
-            open source projects
-          </a>{' '}
-          using Java, Go, NodeJS, &amp; Python.
-        </p>
-        <p>
-          Always looking for challenges, problems to solve and learning great
-          new skills, technologies and tools.
-        </p>
-      </div>
+      </Intro>
+
+      <Social>
+        <SocialLink href={`mailto:${email}?Subject=Hello!`}>
+          <FaEnvelope />
+        </SocialLink>
+
+        <SocialLink href={`https://twitter.com/${twitter}`}>
+          <FaTwitter />
+        </SocialLink>
+
+        <SocialLink href={`https://github.com/${github}`}>
+          <FaGithub />
+        </SocialLink>
+
+        <SocialLink href={`https://www.linkedin.com/in/${linkedin}`}>
+          <FaLinkedin />
+        </SocialLink>
+
+        <SocialLink href={`https://medium.com/@${medium}`}>
+          <FaMedium />
+        </SocialLink>
+      </Social>
     </Layout>
   )
 }
