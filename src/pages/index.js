@@ -87,7 +87,7 @@ export default function IndexPage() {
         <HeaderImage />
       </Portrait>
 
-      <div class="about">
+      <div className="about">
         <HeroHeading>Amitosh Swain Mahapatra</HeroHeading>
       </div>
 
