@@ -1,6 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import { GatsbyImage } from "gatsby-plugin-image";
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -14,17 +14,14 @@ import Img from 'gatsby-image'
  */
 
 export default function HeaderImage() {
-  const data = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(relativePath: { eq: "profile.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 240) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
+  const data = useStaticQuery(graphql`{
+  placeholderImage: file(relativePath: {eq: "profile.jpg"}) {
+    childImageSharp {
+      gatsbyImageData(width: 240, layout: CONSTRAINED)
     }
-  `)
+  }
+}
+`)
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+  return <GatsbyImage image={data.placeholderImage.childImageSharp.gatsbyImageData} />;
 }
