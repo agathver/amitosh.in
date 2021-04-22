@@ -16,8 +16,8 @@ import {
 
 import styled from 'styled-components'
 import HeaderImage from '../components/HeaderImage'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Layout from '../components/Layout'
+import SeoMetadata from '../components/SeoMetadata'
 import { useContactInfo } from '../hooks/use-contact-info'
 
 const Hero = styled.div`
@@ -116,7 +116,7 @@ export default function ResumePage() {
 
   return (
     <Layout>
-      <SEO title='Amitosh Swain Mahapatra | Resume' />
+      <SeoMetadata title='Resume' description='Resume of Amitosh Swain Mahapatra' />
 
       <Links>
         <DownloadLink href='https://drive.google.com/file/d/15PgsupwKCtukArAqy-nBMHKdI8W5q7hW/view?usp=sharing'>
@@ -177,10 +177,10 @@ export default function ResumePage() {
       <Section>
         <h2><FaToolbox /> Skills</h2>
         <SkillList>
-          <li>Java (advanced)</li>
-          <li>Golang (intermediate)</li>
+          <li>Java (expert)</li>
+          <li>Golang (advanced)</li>
           <li>Python (advanced)</li>
-          <li>Javascript (advanced)</li>
+          <li>Javascript (expert)</li>
           <li>SQL (advanced)</li>
           <li>Kubernetes (intermediate)</li>
         </SkillList>

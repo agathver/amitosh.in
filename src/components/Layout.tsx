@@ -5,8 +5,8 @@ import styled, { ThemeProvider } from 'styled-components'
 
 import GlobalStyle from '../styles/GlobalStyle'
 import theme from '../styles/theme'
-import Footer from './footer'
-import Header from './header'
+import Footer from './Footer'
+import Header from './Header'
 
 const Main = styled.main`
   margin: auto;

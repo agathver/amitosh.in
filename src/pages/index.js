@@ -4,8 +4,8 @@ import { FaEnvelope, FaGithub, FaLinkedin, FaMedium, FaTwitter } from 'react-ico
 
 import styled from 'styled-components'
 import HeaderImage from '../components/HeaderImage'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Layout from '../components/Layout'
+import SeoMetadata from '../components/SeoMetadata'
 import { useContactInfo } from '../hooks/use-contact-info'
 
 const Portrait = styled.div`
@@ -60,9 +60,9 @@ export default function IndexPage() {
 
   return (
     <Layout>
-      <SEO title='Home' />
+      <SeoMetadata title='Home' />
       <Portrait>
-        <HeaderImage />
+        <HeaderImage name='Amitosh Swain Mahapatra' />
       </Portrait>
 
       <div className='about'>

@@ -13,7 +13,11 @@ import { GatsbyImage } from "gatsby-plugin-image";
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-export default function HeaderImage() {
+type HeaderImageProps = {
+  name: string,
+}
+
+export default function HeaderImage({name}: HeaderImageProps) {
   const data = useStaticQuery(graphql`{
   placeholderImage: file(relativePath: {eq: "profile.jpg"}) {
     childImageSharp {
@@ -23,5 +27,5 @@ export default function HeaderImage() {
 }
 `)
 
-  return <GatsbyImage image={data.placeholderImage.childImageSharp.gatsbyImageData} />;
+  return <GatsbyImage alt={name} image={data.placeholderImage.childImageSharp.gatsbyImageData} />;
 }
