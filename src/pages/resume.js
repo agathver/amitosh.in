@@ -170,8 +170,8 @@ export default function ResumePage() {
           Summer of Code, 2018</p>
         <p>
           When not coding, I love to revel in creativity &mdash; I draw, paint,
-          sketch and cook. I'm also a passionate gamer. I likes sci-fi movies,
-          djent, metal and rock music.
+          sketch and cook. I'm also a passionate gamer. I like djent, metal and
+          rock music.
         </p>
       </Intro>
       <Section>

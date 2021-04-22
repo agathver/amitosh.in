@@ -77,9 +77,9 @@ export default function IndexPage() {
         </p>
         <p>
           Loves to revel in creativity &mdash; draws, sketches and cooks.
-          Passionate gamer. Likes sci-fi movies, electronic, metal and rock
-          music. Always looking for challenges, problems to solve and learning
-          great new skills, technologies and tools.
+          Passionate gamer. Likes djent, metal and rock music. Always looking
+          for challenges, problems to solve and learning great new skills,
+          technologies and tools.
         </p>
       </Intro>
 
