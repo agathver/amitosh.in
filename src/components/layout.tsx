@@ -1,22 +1,19 @@
-import React from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
 import PropTypes from 'prop-types'
-import { useStaticQuery, graphql } from 'gatsby'
+import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
-import Header from './header'
-import Footer from './footer'
 
 import GlobalStyle from '../styles/GlobalStyle'
 import theme from '../styles/theme'
+import Footer from './footer'
+import Header from './header'
 
 const Main = styled.main`
-  flex: 1 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  margin: auto;
+  max-width: 50rem;
 `
 
-const Layout = ({ children }) => {
+const Layout = ({ children }: React.PropsWithChildren<React.ReactFragment>) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -40,7 +37,7 @@ const Layout = ({ children }) => {
 }
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 }
 
 export default Layout

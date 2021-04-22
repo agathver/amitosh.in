@@ -1,18 +1,12 @@
 import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
-import Layout from '../components/layout'
-import HeaderImage from '../components/HeaderImage'
-import SEO from '../components/seo'
+
+import { FaEnvelope, FaGithub, FaLinkedin, FaMedium, FaTwitter } from 'react-icons/fa'
 
 import styled from 'styled-components'
-
-import {
-  FaEnvelope,
-  FaTwitter,
-  FaGithub,
-  FaLinkedin,
-  FaMedium,
-} from 'react-icons/fa'
+import HeaderImage from '../components/HeaderImage'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import { useContactInfo } from '../hooks/use-contact-info'
 
 const Portrait = styled.div`
   max-width: 15rem;
@@ -56,38 +50,22 @@ const HeroHeading = styled.h1`
 `
 
 export default function IndexPage() {
-  const data = useStaticQuery(graphql`
-    query SiteContactQuery {
-      site {
-        siteMetadata {
-          contactInfo {
-            email
-            twitter
-            github
-            linkedIn
-            medium
-          }
-        }
-      }
-    }
-  `)
-
   const {
     email,
     twitter,
     github,
-    linkedin,
-    medium,
-  } = data.site.siteMetadata.contactInfo
+    linkedIn,
+    medium
+  } = useContactInfo()
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title='Home' />
       <Portrait>
         <HeaderImage />
       </Portrait>
 
-      <div className="about">
+      <div className='about'>
         <HeroHeading>Amitosh Swain Mahapatra</HeroHeading>
       </div>
 
@@ -118,11 +96,11 @@ export default function IndexPage() {
           <FaGithub />
         </SocialLink>
 
-        <SocialLink href={`https://www.linkedin.com/in/${linkedin}`}>
+        <SocialLink href={`https://www.linkedin.com/in/${linkedIn}`}>
           <FaLinkedin />
         </SocialLink>
 
-        <SocialLink href={`https://medium.com/@${medium}`}>
+        <SocialLink href={`https://${medium}`}>
           <FaMedium />
         </SocialLink>
       </Social>
