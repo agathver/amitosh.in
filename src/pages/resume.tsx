@@ -19,12 +19,18 @@ import HeaderImage from '../components/HeaderImage'
 import Layout from '../components/Layout'
 import SeoMetadata from '../components/SeoMetadata'
 import { useContactInfo } from '../hooks/use-contact-info'
+import { size } from '../styles/media'
 
 const Hero = styled.div`
   display: flex;
   align-items: center;
+  flex-direction: column;
   padding: 0 2rem;
-  justify-content: space-between
+  justify-content: space-between;
+
+  ${size.medium} {
+    flex-direction: row;
+  }
 `
 
 const Portrait = styled.div`
@@ -63,7 +69,11 @@ const SocialLink = styled.a`
 `
 
 const About = styled.div`
-  margin-left: 2rem;
+  text-align: center;
+
+  ${size.medium} {
+    margin-left: 2rem;
+  }
 `
 
 const HeroHeading = styled.h1`
@@ -84,12 +94,20 @@ const Title = styled.h3`
 `
 
 const SkillList = styled.ul`
-  columns: 3
+  columns: 2;
+  
+  ${size.large} {
+    columns: 3
+  }
 `
 
 const Links = styled.div`
   display: flex;
-  justify-content: flex-end
+  justify-content: center;
+
+  ${size.medium} {
+    justify-content: flex-end;
+  }
 `
 
 const DownloadLink = styled.a`
