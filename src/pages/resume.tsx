@@ -121,6 +121,14 @@ const DownloadLink = styled.a`
     background: #e53935;
   }
 `
+const description = `Resume of Amitosh Swain Mahapatra
+
+Amitosh is a software engineer based in Bangalore, India with 2 years of
+industry experience. He currently works at Gojek, building Gopay, a e-wallet for
+south-east asia. Primarily he has focused on back-end development with Java
+and Go, but he is also skilled in Python, NodeJS and front-end development with
+React.  He also has made a considerable amount of contribution to open-source.`
+
 
 export default function ResumePage() {
 
@@ -134,7 +142,7 @@ export default function ResumePage() {
 
   return (
     <Layout>
-      <SeoMetadata title='Resume' description='Resume of Amitosh Swain Mahapatra' />
+      <SeoMetadata title='Resume' description={description} />
 
       <Links>
         <DownloadLink href='https://drive.google.com/file/d/15PgsupwKCtukArAqy-nBMHKdI8W5q7hW/view?usp=sharing'>
