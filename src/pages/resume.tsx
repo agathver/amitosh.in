@@ -125,7 +125,7 @@ export default function ResumePage() {
       </Links>
       <Hero>
         <Portrait>
-          <HeaderImage />
+          <HeaderImage name='Amitosh Swain Mahapatra' />
         </Portrait>
         <About>
           <HeroHeading>Amitosh Swain Mahapatra</HeroHeading>
@@ -200,19 +200,15 @@ export default function ResumePage() {
             and Golang with some Python for internal tools. Some of my notable work:
           </p>
           <ul>
+            <li>
+              Worked on engineering and maintaining core APIs of Gopay exposed to
+              customers and merchants.
+            </li>
             <li>Rewrote gRPC transport libraries to optimize connection reuse
               and caching to improve service throughput up to 200%.
             </li>
-            <li> Developed an encryption-as-a-service gateway for external party
-              integration.
-            </li>
-            <li> Worked on the rewrite of the GoPay payment state management
-              system and API gateway in modern Java.
-            </li>
-            <li> Standardized instrumentation across micro-services for easier
-              integration with the prevalent framework to easily enable
-              distributed tracing and automatic metric collection for increased
-              visibility.
+            <li> As a part of a two-person team, worked on the design and implementation
+              of the GoPay payment state management system and API gateway in modern Java.
             </li>
           </ul>
         </ResumeItem>
